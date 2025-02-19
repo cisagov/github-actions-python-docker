@@ -1,14 +1,14 @@
-# skeleton-docker 💀🐳 #
+# github-actions-python-docker 💀🐳 #
 
-[![GitHub Build Status](https://github.com/cisagov/skeleton-docker/workflows/build/badge.svg)](https://github.com/cisagov/skeleton-docker/actions/workflows/build.yml)
-[![CodeQL](https://github.com/cisagov/skeleton-docker/workflows/CodeQL/badge.svg)](https://github.com/cisagov/skeleton-docker/actions/workflows/codeql-analysis.yml)
-[![Known Vulnerabilities](https://snyk.io/test/github/cisagov/skeleton-docker/badge.svg)](https://snyk.io/test/github/cisagov/skeleton-docker)
+[![GitHub Build Status](https://github.com/cisagov/github-actions-python-docker/workflows/build/badge.svg)](https://github.com/cisagov/github-actions-python-docker/actions/workflows/build.yml)
+[![CodeQL](https://github.com/cisagov/github-actions-python-docker/workflows/CodeQL/badge.svg)](https://github.com/cisagov/github-actions-python-docker/actions/workflows/codeql-analysis.yml)
+[![Known Vulnerabilities](https://snyk.io/test/github/cisagov/github-actions-python-docker/badge.svg)](https://snyk.io/test/github/cisagov/github-actions-python-docker)
 
 ## Docker Image ##
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/cisagov/example)](https://hub.docker.com/r/cisagov/example)
 [![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/cisagov/example)](https://hub.docker.com/r/cisagov/example)
-[![Platforms](https://img.shields.io/badge/platforms-amd64%20%7C%20arm%2Fv6%20%7C%20arm%2Fv7%20%7C%20arm64%20%7C%20ppc64le%20%7C%20s390x-blue)](https://hub.docker.com/r/cisagov/skeleton-docker/tags)
+[![Platforms](https://img.shields.io/badge/platforms-amd64%20%7C%20arm%2Fv6%20%7C%20arm%2Fv7%20%7C%20arm64%20%7C%20ppc64le%20%7C%20s390x-blue)](https://hub.docker.com/r/cisagov/github-actions-python-docker/tags)
 
 This is a Docker skeleton project that can be used to quickly get a
 new [cisagov](https://github.com/cisagov) GitHub Docker project
@@ -24,7 +24,7 @@ appropriate for Docker containers and the major languages that we use.
 To run the `cisagov/example` image via Docker:
 
 ```console
-docker run cisagov/example:0.2.0
+docker run cisagov/example:0.0.1
 ```
 
 ### Running with Docker Compose ###
@@ -33,13 +33,13 @@ docker run cisagov/example:0.2.0
 
     ```yaml
     ---
-    name: skeleton-docker
+    name: github-actions-python-docker
 
     services:
       example:
         environment:
           - ECHO_MESSAGE="Hello from docker compose"
-        image: cisagov/example:0.2.0
+        image: cisagov/example:0.0.1
         ports:
           - protocol: tcp
             published: "8080"
@@ -74,7 +74,7 @@ environment variables.  See the
 
     ```yaml
     ---
-    name: skeleton-docker
+    name: github-actions-python-docker
 
     secrets:
       quote_txt:
@@ -84,7 +84,7 @@ environment variables.  See the
       example:
         environment:
           - ECHO_MESSAGE="Hello from docker compose"
-        image: cisagov/example:0.2.0
+        image: cisagov/example:0.0.1
         ports:
           - protocol: tcp
             published: "8080"
@@ -125,7 +125,7 @@ environment variables.  See the
 1. Pull the new image:
 
     ```console
-    docker pull cisagov/example:0.2.0
+    docker pull cisagov/example:0.0.1
     ```
 
 1. Recreate and run the container by following the [previous instructions](#running-with-docker).
@@ -164,12 +164,12 @@ and then update dependencies as you would above.
 The images of this container are tagged with [semantic
 versions](https://semver.org) of the underlying example project that they
 containerize.  It is recommended that most users use a version tag (e.g.
-`:0.2.0`).
+`:0.0.1`).
 
 | Image:tag | Description |
 |-----------|-------------|
-|`cisagov/example:0.2.0`| An exact release version. |
-|`cisagov/example:0.2`| The most recent release matching the major and minor version numbers. |
+|`cisagov/example:0.0.1`| An exact release version. |
+|`cisagov/example:0.0`| The most recent release matching the major and minor version numbers. |
 |`cisagov/example:0`| The most recent release matching the major version number. |
 |`cisagov/example:edge` | The most recent image built from a merge into the `develop` branch of this repository. |
 |`cisagov/example:nightly` | A nightly build of the `develop` branch of this repository. |
@@ -225,7 +225,7 @@ Build the image locally using this git repository as the [build context](https:/
 
 ```console
 docker build \
-  --tag cisagov/example:0.2.0 \
+  --tag cisagov/example:0.0.1 \
   https://github.com/cisagov/example.git#develop
 ```
 
@@ -256,7 +256,7 @@ Docker:
       --file Dockerfile-x \
       --platform linux/amd64 \
       --output type=docker \
-      --tag cisagov/example:0.2.0 .
+      --tag cisagov/example:0.0.1 .
     ```
 
 ## New repositories from a skeleton ##
